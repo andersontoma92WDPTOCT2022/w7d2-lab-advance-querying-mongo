@@ -98,25 +98,25 @@ limit:
 
 query:
 projection:
-sort:
+sort:{number_of_employees:-1}
 skip:
-limit:
+limit:10
 
 ### 11. All the companies founded on the second semester of the year. Limit your search to 1000 companies.
 
 <!-- Your Code Goes Here -->
 
-query:
+query: {founded_month:{$gte:7}}
 projection:
 sort:
 skip:
-limit:
+limit:1000
 
 ### 12. All the companies founded before 2000 that have an acquisition amount of more than 10.000.000
 
 <!-- Your Code Goes Here -->
 
-query:
+query: {$and: [{ ipo: { $exists: true }},{ 'ipo.valuation_amount': { $ne: null }},{ 'ipo.valuation_amount': { $gte: 10000000 }},{founded_year:{$lte:2000}}]}
 projection:
 sort:
 skip:
