@@ -176,17 +176,17 @@ limit:
 
 <!-- Your Code Goes Here -->
 
-query:
-projection:
+query: {"acquisition.acquired_month":{$lte:3}}
+projection: {name: 1,acquisition: 1}
 sort:
 skip:
-limit:
+limit:10
 
 ### 19. All the companies that have been founded between 2000 and 2010, but have not been acquired before 2011.
 
 <!-- Your Code Goes Here -->
 
-query:
+query: {$and: [{founded_year:{$gte:2000}},{founded_year:{$lte:2010}},{acquisition:null}]}
 projection:
 sort:
 skip:
