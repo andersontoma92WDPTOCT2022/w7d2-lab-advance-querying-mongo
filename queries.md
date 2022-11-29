@@ -40,8 +40,13 @@ limit:
 
 <!-- Your Code Goes Here -->
 
+{$and: [{"ipo.valuation_amount": {$gt: 100000000}}, {founded_year: {$lt: 2010}}]}
+resposta da Karen
+
 query:? {$and : [{ipo: {$exists: true}} , {"ipo.valuation_amount": {$ne: null}},{"ipo.valuation_amount": {$gte:100000000}} ]}
+
 projection: {name:1, ipo:1}
+
 sort:
 skip:
 limit:
