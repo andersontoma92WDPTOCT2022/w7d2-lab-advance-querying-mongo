@@ -126,9 +126,9 @@ limit:
 
 <!-- Your Code Goes Here -->
 
-query:
-projection:
-sort:
+query: {"acquisition.acquired_year": {$gte:2010}}
+projection: {name:1, acquisition:1}
+sort: {"acquisition.price_amount":-1}
 skip:
 limit:
 
@@ -137,8 +137,8 @@ limit:
 <!-- Your Code Goes Here -->
 
 query:
-projection:
-sort:
+projection: {name:1, founded_year:1}
+sort: {founded_year:-1}
 skip:
 limit:
 
