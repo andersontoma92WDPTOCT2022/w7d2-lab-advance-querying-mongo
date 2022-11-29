@@ -146,19 +146,19 @@ limit:
 
 <!-- Your Code Goes Here -->
 
-query:
-projection:
-sort:
+query: {"acquisition.acquired_day": {$gte:7}}
+projection: {name:1, acquisition:1}
+sort: {"acquisition.price_amount":-1}
 skip:
-limit:
+limit:10
 
 ### 16. All the companies on the 'web' `category` that have more than 4000 employees. Sort them by the amount of employees in ascending order.
 
 <!-- Your Code Goes Here -->
 
-query:
+query:{$and: [{category_code: 'web'},{number_of_employees:{$gte: 4000}}]}
 projection:
-sort:
+sort:{number_of_employees:1}
 skip:
 limit:
 
@@ -166,7 +166,7 @@ limit:
 
 <!-- Your Code Goes Here -->
 
-query:
+query: {$and: [{'acquisition.price_amount': {$gte: 10000000}},{"acquisition.price_currency_code":"EUR"}]}
 projection:
 sort:
 skip:
